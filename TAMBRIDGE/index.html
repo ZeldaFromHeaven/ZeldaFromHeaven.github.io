@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Co-Evolution of Pose and Mesh for 3D Human Body Estimation from Video.">
+  <meta name="keywords" content="PMCE, 3D Human Reconstruction">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PMCE</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="../static/css/bulma.min.css">
+  <link rel="stylesheet" href="../static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="../static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="../static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="../static/css/index.css">
+  <link rel="icon" href="../static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="../static/js/fontawesome.all.min.js"></script>
+  <script src="../static/js/bulma-carousel.min.js"></script>
+  <script src="../static/js/bulma-slider.min.js"></script>
+  <script src="../static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://github.com/kasvii/GATOR">
+            GATOR
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title">Co-Evolution of Pose and Mesh for 3D Human Body Estimation from Video</h1>
+            <h1 class="title is-size-3" style="color:#5a6268;">ICCV 2023</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://kasvii.github.io/">Yingxuan You</a><sup>1</sup>,  </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?hl=zh-CN&user=4CQKG8oAAAAJ">Hong Liu</a><sup>1</sup>,  </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=PjBAErYAAAAJ&hl=zh-CN&oi=sra">Ti Wang</a><sup>1</sup>,  
+            </span>
+            <span class="author-block">
+              <a href="https://vegetebird.github.io/">Wenhao Li</a><sup>1</sup>,  
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=gU9chAwAAAAJ&hl=zh-CN&oi=sra">Runwei Ding</a><sup>1</sup>,  
+            </span>
+            <span class="author-block">
+              <a href="https://xialipku.github.io/">Xia Li</a><sup>2</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Peking University, China     </span>
+            <span class="author-block"><sup>2</sup>ETH Zurich, Switzerland</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2308.10305.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2308.10305.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="https://kasvii.github.io/PMCE"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/kasvii/PMCE"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Despite significant progress in single image-based 3D human mesh recovery, accurately and smoothly recovering 3D human
+            motion from a video remains challenging. Existing video-based methods generally recover human mesh by estimating the
+            complex pose and shape parameters from coupled image features, whose high complexity and low representation ability
+            often result in inconsistent pose motion and limited shape patterns. To alleviate this issue, we introduce 3D pose as
+            the intermediary and propose a Pose and Mesh Co-Evolution network (PMCE) that decouples this task into two parts: (1)
+            video-based 3D human pose estimation and (2) mesh vertices regression from the estimated 3D pose and temporal image
+            feature. Specifically, we propose a two-stream encoder that estimates mid-frame 3D pose and extracts a temporal image
+            feature from the input image sequence. In addition, we design a co-evolution decoder that performs pose and mesh
+            interactions with the image-guided Adaptive Layer Normalization (AdaLN) to make pose and mesh fit the human body shape.
+            Extensive experiments demonstrate that the proposed PMCE outperforms previous state-of-the-art methods in terms of both
+            per-frame accuracy and temporal consistency on three benchmark datasets: 3DPW, Human3.6M, and MPI-INF-3DHP.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <!-- <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+            <h2 class="title is-3">Video</h2>
+            <div class="publication-video">
+            <iframe src="https://www.youtube.com/embed/p4vSrBd9JIs"
+                    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div> -->
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+
+<section class="section">
+
+    <div class="container is-max-desktop">
+
+        <!-- Framework. -->
+        <div class="content has-text-justified">
+          <h2 class="title is-3 has-text-centered"><p>Framework Overview</p></h2>
+          <div class="has-text-centered">
+            <img style="width: 100%;" src="./images/Framework.png"
+                 alt="PMCE Framework."/>
+          </div>
+          <p>
+            Framework of the proposed PMCE. Given a video sequence, static image features are extracted by a pre-trained
+            CNN, and 2D poses are detected by an off-the-shelf 2D pose
+            detector. The two-stream encoder leverages dual parallel modules to generate a
+            temporal feature and estimate the mid-frame 3D pose, respectively. Then, the co-evolution decoder
+            regresses the mesh vertices through the pose and mesh interactions guided by our proposed AdaLN, which makes the pose
+            and mesh fit the body shape.
+          </p>
+        </div>
+
+        <!--/ Framework. -->
+    </div>
+    
+    <br/>
+
+      
+</section>
+
+<div class="columns is-centered has-text-centered">
+  <div class="column is-four-fifths">
+    <h2 class="title is-3 has-text-centered">
+      <p>Results on internet videos</p>
+    </h2>
+    <div class=" ">
+      <div style="position:relative text-center">
+        <div style="display:inline;"><video class="vid1" width="39.5%" height="100%" autoplay loop muted controls
+            src="./videos/internet1.mp4" type="video/mp4"></video></div>
+        <div style="display:inline;"><video class="vid2" width="39.5%" height="100%" autoplay loop muted controls
+            src="./videos/internet2.mp4" type="video/mp4"></video></div>
+        <div style="display:inline;"><video class="vid3" width="39.5%" height="100%" autoplay loop muted controls
+            src="./videos/internet3.mp4" type="video/mp4"></video></div>
+        <div style="display:inline;"><video class="vid4" width="39.5%" height="100%" autoplay loop muted controls
+            src="./videos/internet4.mp4" type="video/mp4"></video></div>
+        <div style="display:inline;"><video class="vid5" width="39.5%" height="100%" autoplay loop muted controls
+            src="./videos/internet5.mp4" type="video/mp4"></video></div>
+        <div style="display:inline;"><video class="vid6" width="39.5%" height="100%" autoplay loop muted controls
+            src="./videos/internet6.mp4" type="video/mp4"></video></div>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+
+
+
+<section class="section">
+    <div class="container is-max-desktop">
+        
+        <!-- Comparison on Datasets -->
+
+        <div class="container has-text-centered">
+
+            <h2 class="title is-3 has-text-centered"><p>Comparison on Datasets</p></h2>
+    
+            <div id="results-carousel" class="carousel results-carousel">
+              
+              <div>
+                <div class="item item-1">
+                  <video style="width: 80%;" poster="" id="case1" autoplay controls muted loop playsinline height="20%">
+                    <source src="./videos/demo1.mp4"
+                            type="video/mp4">
+                  </video>
+                </div>
+              </div>
+      
+              <div>
+                <div class="item item-2">
+                  <video style="width: 80%;" poster="" id="case2" autoplay controls muted loop playsinline height="20%">
+                    <source src="./videos/demo2.mp4"
+                            type="video/mp4">
+                  </video>
+                </div>
+              </div>
+      
+              <div>
+                <div class="item item-3">
+                  <video style="width: 80%;" poster="" id="case3" autoplay controls muted loop playsinline height="20%">
+                    <source src="./videos/demo3.mp4"
+                            type="video/mp4">
+                  </video>
+                </div>
+              </div>
+      
+            </div>
+    
+        </div>
+
+        <!--/ Comparison on Datasets -->
+
+        <br/>
+
+        <!-- Comparison. -->
+        <div class="content has-text-justified">
+            <h2 class="title is-3 has-text-centered"><p>Visual Comparison</p></h2>
+            <div class="has-text-centered">
+              <img style="width: 100%;" src="./images/Comparison.png"
+                   alt="Comparison."/>
+            </div>
+            <p>
+              Pink: MPS-Net, Blue: Our PMCE.
+            </p>
+          </div>
+  
+        <!--/Comparison. -->
+
+        <br/>
+
+    </div>
+</section>
+  
+
+<section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@inproceedings{you2023pmce,
+      author = {Yingxuan You, Hong Liu, Ti Wang, Wenhao Li, Runwei Ding, Xia Li},
+      title = {Co-Evolution of Pose and Mesh for 3D Human Body Estimation from Video},
+      booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+      pages = {14963--14973},
+      year = {2023}
+}</code></pre>
+    </div>
+</section>
+
+
+<footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        Thanks to <a href="https://www.flaticon.com/" target="_blank">Flaticon</a> for providing beautiful icons.
+        The website template is borrowed from <a href="https://hypernerf.github.io/" target="_blank">HyperNeRF</a>.
+      </div>
+    </div>
+</footer>
+
+<script>
+    bulmaCarousel.attach('#results-carousel', {
+        slidesToScroll: 1,
+        slidesToShow: 1,
+        infinite: true,
+        autoplay: false,
+    });
+</script>
+
+</body>
+</html>
