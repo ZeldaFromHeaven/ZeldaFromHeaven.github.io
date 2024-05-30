@@ -108,7 +108,7 @@
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://arxiv.org/pdf/2308.10305.pdf"
+                <a href=""
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -117,7 +117,7 @@
                 </a>
               </span>
               <span class="link-block">
-                <a href="https://arxiv.org/pdf/2308.10305.pdf"
+                <a href=""
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -192,7 +192,7 @@
         <div class="content has-text-justified">
           <h2 class="title is-3 has-text-centered"><p>Framework Overview</p></h2>
           <div class="has-text-centered">
-            <img style="width: 100%;" src="./images/Framework.png"
+            <img style="width: 100%;" src="./images/Overview.png"
                  alt="TAMBRIDGE Overview"/>
           </div>
           <p>
@@ -211,29 +211,81 @@
       
 </section>
 
+<section class="section">
+
+  <div class="container is-max-desktop">
+
+      <!-- Framework. -->
+      <div class="content has-text-justified">
+        <h2 class="title is-3 has-text-centered"><p>Plug and Play Fusion Bridge</p></h2>
+        <div class="has-text-centered">
+          <img style="width: 100%;" src="./images/fusion_bridge.png"
+               alt="Fusion Bridge"/>
+        </div>
+        <p>
+          The Fusion Bridge module selects reconstruction keyframes from a local map based on viewpoint covisibility. It projects the 3DGS and local map point cloud onto the reconstruction frame, filtering projections through pixel gates. The module then optimizes the pose by jointly minimizing rendering and point cloud reprojection losses, setting the initial rendering pose for the Online 3DGS.
+        </p>
+      </div>
+
+      <!--/ Framework. -->
+  </div>
+  
+  <br/>
+
+    
+</section>
+
+<section class="section">
+
+  <div class="container is-max-desktop">
+
+      <!-- Framework. -->
+      <div class="content has-text-justified">
+        <h2 class="title is-3 has-text-centered"><p>Robotic Long-session SLAM</p></h2>
+        <div class="has-text-centered">
+          <img style="width: 100%;" src="./images/top.png"
+               alt="Fusion Bridge"/>
+        </div>
+        <p>
+          By seamlessly integrating ORB Visual Odometry with viewpoint selection and 
+          re-projection loss, our method significantly improves the robustness towards
+           sensor noise and motion blur especially in long-session robotic tasks.
+        </p>
+      </div>
+
+      <!--/ Framework. -->
+  </div>
+  
+  <br/>
+
+    
+</section>
 <div class="columns is-centered has-text-centered">
   <div class="column is-four-fifths">
     <h2 class="title is-3 has-text-centered">
-      <p>Results on internet videos</p>
+      <p>Results on TUM-RGBD</p>
     </h2>
-    <div class=" ">
-      <div style="position:relative text-center">
-        <div style="display:inline;"><video class="vid1" width="39.5%" height="100%" autoplay loop muted controls
-            src="./videos/internet1.mp4" type="video/mp4"></video></div>
-        <div style="display:inline;"><video class="vid2" width="39.5%" height="100%" autoplay loop muted controls
-            src="./videos/internet2.mp4" type="video/mp4"></video></div>
-        <div style="display:inline;"><video class="vid3" width="39.5%" height="100%" autoplay loop muted controls
-            src="./videos/internet3.mp4" type="video/mp4"></video></div>
-        <div style="display:inline;"><video class="vid4" width="39.5%" height="100%" autoplay loop muted controls
-            src="./videos/internet4.mp4" type="video/mp4"></video></div>
-        <div style="display:inline;"><video class="vid5" width="39.5%" height="100%" autoplay loop muted controls
-            src="./videos/internet5.mp4" type="video/mp4"></video></div>
-        <div style="display:inline;"><video class="vid6" width="39.5%" height="100%" autoplay loop muted controls
-            src="./videos/internet6.mp4" type="video/mp4"></video></div>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+      <div style="flex: 0 0 48%; margin: 1%; text-align: center;">
+        <video class="vid3" width="100%" height="auto" autoplay loop muted controls src="./videos/fr2_360.mp4" type="video/mp4"></video>
+        <p>fr2_360 (5 FPS)</p>
+      </div>
+      <div style="flex: 0 0 48%; margin: 1%; text-align: center;">
+        <video class="vid4" width="100%" height="auto" autoplay loop muted controls src="./videos/fr2_pioneer_slam2.mp4" type="video/mp4"></video>
+        <p>fr2_pioneer_slam2 (9 FPS)</p>
+      </div>
+      <div style="flex: 0 0 48%; margin: 1%; text-align: center;">
+        <video class="vid5" width="100%" height="auto" autoplay loop muted controls src="./videos/fr1_desk.mp4" type="video/mp4"></video>
+        <p>fr1_desk (9 FPS)</p>
+      </div>
+      <div style="flex: 0 0 48%; margin: 1%; text-align: center;">
+        <video class="vid6" width="100%" height="auto" autoplay loop muted controls src="./videos/fr3_office.mp4" type="video/mp4"></video>
+        <p>fr3_office (9 FPS)</p>
       </div>
     </div>
   </div>
 </div>
+
 <br>
 <br>
 
@@ -246,40 +298,44 @@
 
         <div class="container has-text-centered">
 
-            <h2 class="title is-3 has-text-centered"><p>Comparison on Datasets</p></h2>
+            <h2 class="title is-3 has-text-centered"><p>Reconstruction Results</p></h2>
     
-            <div id="results-carousel" class="carousel results-carousel">
-              
-              <div>
-                <div class="item item-1">
-                  <video style="width: 80%;" poster="" id="case1" autoplay controls muted loop playsinline height="20%">
-                    <source src="./videos/demo1.mp4"
-                            type="video/mp4">
-                  </video>
+            <div class="columns is-centered has-text-centered">
+              <div class="column is-four-fifths">
+                <h2 class="title is-3 has-text-centered">
+                </h2>
+                <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+                  <div style="flex: 0 0 48%; margin: 1%; text-align: center;">
+                    <img src="./images/fr1_360.png" width="100%" height="auto" alt="Image 1">
+                    
+                  </div>
+                  <div style="flex: 0 0 48%; margin: 1%; text-align: center;">
+                    <img src="./images/fr2_pioneer_slam.png" width="100%" height="auto" alt="Image 2">
+                    
+                  </div>
+                  <div style="flex: 0 0 48%; margin: 1%; text-align: center;">
+                    <img src="./images/fr1_desk.png" width="100%" height="auto" alt="Image 3">
+                    
+                  </div>
+                  <div style="flex: 0 0 48%; margin: 1%; text-align: center;">
+                    <img src="./images/fr3_office.png" width="100%" height="auto" alt="Image 4">
+                    
+                  </div>
+                  <div style="flex: 0 0 48%; margin: 1%; text-align: center;">
+                    <img src="./images/fr2_large_no_loop.png" width="100%" height="auto" alt="Image 5">
+                    
+        
+                   
+                  </div>
+                  <div style="flex: 0 0 48%; margin: 1%; text-align: center;">
+                    <img src="./images/fr2_desk.png" width="100%" height="auto" alt="Image 7">
+                   
+                  </div>
+                
                 </div>
               </div>
-      
-              <div>
-                <div class="item item-2">
-                  <video style="width: 80%;" poster="" id="case2" autoplay controls muted loop playsinline height="20%">
-                    <source src="./videos/demo2.mp4"
-                            type="video/mp4">
-                  </video>
-                </div>
-              </div>
-      
-              <div>
-                <div class="item item-3">
-                  <video style="width: 80%;" poster="" id="case3" autoplay controls muted loop playsinline height="20%">
-                    <source src="./videos/demo3.mp4"
-                            type="video/mp4">
-                  </video>
-                </div>
-              </div>
-      
             </div>
-    
-        </div>
+            
 
         <!--/ Comparison on Datasets -->
 
@@ -289,16 +345,23 @@
         <div class="content has-text-justified">
             <h2 class="title is-3 has-text-centered"><p>Visual Comparison</p></h2>
             <div class="has-text-centered">
-              <img style="width: 100%;" src="./images/Comparison.png"
+              <img style="width: 100%;" src="./images/comparison.png"
                    alt="Comparison."/>
             </div>
-            <p>
-              Pink: MPS-Net, Blue: Our PMCE.
-            </p>
           </div>
   
         <!--/Comparison. -->
 
+        <!-- Comparison. -->
+        <div class="content has-text-justified">
+          <h2 class="title is-3 has-text-centered"><p>FPS-Induced Reconstruction Degradation</p></h2>
+          <div class="has-text-centered">
+            <img style="width: 100%;" src="./images/FPS.png"
+                 alt="Comparison."/>
+          </div>
+        </div>
+
+      <!--/Comparison. -->
         <br/>
 
     </div>
