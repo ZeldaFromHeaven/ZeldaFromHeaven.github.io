@@ -162,7 +162,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            The limited robustness of 3D Gaussian Splatting (3DGS) to motion blur and camera noise, along with its poor real-time performance, restricts its application in robotic SLAM tasks. Upon analysis, the primary causes of these issues are the density of views with motion blur and the cumulative errors in dense pose estimation from calculating losses based on noisy original images and rendering results, which increase the difficulty of 3DGS rendering convergence. Thus, a cutting-edge 3DGS-based SLAM system is introduced, leveraging the efficiency and flexibility of 3DGS to achieve real-time performance while remaining robust against sensor noise, motion blur, and the challenges posed by long-session SLAM. Central to this approach is the Fusion Bridge module, which seamlessly integrates tracking-centered ORB Visual Odometry with mapping-centered online 3DGS. Precise pose initialization is enabled by this module through joint optimization of re-projection and rendering loss, as well as strategic view selection, enhancing rendering convergence in large-scale scenes. Extensive experiments demonstrate state-of-the-art rendering quality and localization accuracy, positioning this system as a promising solution for real-world robotics applications that require stable, near-real-time performance. Our project is available at \url{https://ZeldaFromHeaven.github.io/TAMBRIDGE/}.
+            The limited robustness of 3D Gaussian Splatting (3DGS) to motion blur and camera noise, along with its poor real-time performance, restricts its application in robotic SLAM tasks. Upon analysis, the primary causes of these issues are the density of views with motion blur and the cumulative errors in dense pose estimation from calculating losses based on noisy original images and rendering results, which increase the difficulty of 3DGS rendering convergence. Thus, a cutting-edge 3DGS-based SLAM system is introduced, leveraging the efficiency and flexibility of 3DGS to achieve real-time performance while remaining robust against sensor noise, motion blur, and the challenges posed by long-session SLAM. Central to this approach is the Fusion Bridge module, which seamlessly integrates tracking-centered ORB Visual Odometry with mapping-centered online 3DGS. Precise pose initialization is enabled by this module through joint optimization of re-projection and rendering loss, as well as strategic view selection, enhancing rendering convergence in large-scale scenes. Extensive experiments demonstrate state-of-the-art rendering quality and localization accuracy, positioning this system as a promising solution for real-world robotics applications that require stable, near-real-time performance.}.
           </p>
         </div>
       </div>
@@ -193,15 +193,13 @@
           <h2 class="title is-3 has-text-centered"><p>Framework Overview</p></h2>
           <div class="has-text-centered">
             <img style="width: 100%;" src="./images/Framework.png"
-                 alt="PMCE Framework."/>
+                 alt="TAMBRIDGE Overview"/>
           </div>
           <p>
-            Framework of the proposed PMCE. Given a video sequence, static image features are extracted by a pre-trained
-            CNN, and 2D poses are detected by an off-the-shelf 2D pose
-            detector. The two-stream encoder leverages dual parallel modules to generate a
-            temporal feature and estimate the mid-frame 3D pose, respectively. Then, the co-evolution decoder
-            regresses the mesh vertices through the pose and mesh interactions guided by our proposed AdaLN, which makes the pose
-            and mesh fit the body shape.
+            Framework of the proposed TAMBRIDGE. ORB-based visual odometry analyzes RGB-D data to estimate poses and select keyframes 
+            for local mapping. These keyframes feed into the Global Optimization featuring Bundle Adjustment (BA) to refine the path. 
+            Simultaneously, the Fusion Bridge module selects reconstruction frames and calculates rendering poses and Border Masks. 
+            An online 3DGS backend processes the selected frames to create a globally consistent, high-fidelity scene representation.
           </p>
         </div>
 
@@ -325,7 +323,7 @@
     <div class="container">
       <div class="content has-text-centered">
         Thanks to <a href="https://www.flaticon.com/" target="_blank">Flaticon</a> for providing beautiful icons.
-        The website template is borrowed from <a href="https://hypernerf.github.io/" target="_blank">HyperNeRF</a>.
+        The website template is borrowed from <a href="https://kasvii.github.io/PMSE" target="_blank">PMSE</a>.
       </div>
     </div>
 </footer>
